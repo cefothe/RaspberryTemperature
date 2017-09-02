@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import dht11
 import time
 import lcdui
-import TemperatureTO
+import temperatureTO
 import time
 
 
