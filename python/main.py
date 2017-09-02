@@ -56,7 +56,7 @@ while True:
       if startTemp != int(temp):
          device.lcd_puts(str(temp), 1)
          json_object = json.dumps(temperatureTO.TemperatureTO(time.strftime("%c"),int(temp)).__dict__)  
-         requests.post("http://192.168.1.9/html/gaba-test/index.php",json_object)
+         requests.post("http://192.168.1.7/www/savedata.php",json_object)
 
       if temp > temperature: 
          GPIO.output(37, True)
