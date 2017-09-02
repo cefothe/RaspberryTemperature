@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 import dht11
 import time
 import lcdui
+import TemperatureTO
+import time
 
 
 
@@ -51,6 +53,7 @@ while True:
       temp = result.temperature
       if startTemp != int(temp):
          device.lcd_puts(str(temp), 1)
+         TemperatureTO(time.strftime("%c"),int(temp))
       if temp > temperature: 
          GPIO.output(37, True)
          GPIO.output(35, False)
