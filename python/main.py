@@ -4,6 +4,7 @@ import time
 import lcdui
 import temperatureTO
 import time
+import json
 
 
 
@@ -53,7 +54,7 @@ while True:
       temp = result.temperature
       if startTemp != int(temp):
          device.lcd_puts(str(temp), 1)
-         temperatureTO.TemperatureTO(time.strftime("%c"),int(temp))
+         print(json.dumps(temperatureTO.TemperatureTO(time.strftime("%c"),int(temp)))
       if temp > temperature: 
          GPIO.output(37, True)
          GPIO.output(35, False)
